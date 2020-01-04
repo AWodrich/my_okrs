@@ -1,0 +1,16 @@
+/*******************************************************************************
+ *
+ * Makes an Container full Screen width, even, when i'ts inside an Container
+ * Important: The Content MUST be centered, to work
+ *
+ ******************************************************************************/
+
+@mixin full-width-out-of-container() {
+    width: 100vw;
+
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}

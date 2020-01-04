@@ -1,0 +1,16 @@
+/*******************************************************************************
+ *
+ * Global Styles
+ *
+ ******************************************************************************/
+
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth; //Chrome, FF, Opera
+
+    // Scale Font to Viewport for large Display
+    @include xxlmin() {
+        font-size: .7vw;
+    }
+}

@@ -1,0 +1,119 @@
+/*******************************************************************************
+ *
+ * Mixin Aliases for faster Use
+ *
+ ******************************************************************************/
+
+/*------------------------------------------------------*\
+     Media Queries
+\*------------------------------------------------------*/
+
+@mixin xsmin() {
+    @include Media(xs, min) {
+        @content
+    }
+}
+
+
+@mixin smmin() {
+    @include Media(sm, min) {
+        @content
+    }
+}
+
+
+@mixin mdmin() {
+    @include Media(md, min) {
+        @content
+    }
+}
+
+
+@mixin lgmin() {
+    @include Media(lg, min) {
+        @content
+    }
+}
+
+
+@mixin xlmin() {
+    @include Media(xl, min) {
+        @content
+    }
+}
+
+
+@mixin xxlmin() {
+    @include Media(xxl, min) {
+        @content
+    }
+}
+
+
+@mixin xsmax() {
+    @include Media(xs, max) {
+        @content
+    }
+}
+
+
+@mixin smmax() {
+    @include Media(sm, max) {
+        @content
+    }
+}
+
+
+@mixin mdmax() {
+    @include Media(md, max) {
+        @content
+    }
+}
+
+
+@mixin lgmax() {
+    @include Media(lg, max) {
+        @content
+    }
+}
+
+
+@mixin xlmax() {
+    @include Media(xl, max) {
+        @content
+    }
+}
+
+
+@mixin xxlmax() {
+    @include Media(xxl, max) {
+        @content
+    }
+}
+
+
+/*------------------------------------------------------*\
+     BEM
+\*------------------------------------------------------*/
+
+@mixin b($name) {
+    @include block($name) {
+        @content
+    }
+}
+
+
+@mixin e($name) {
+    @include element($name) {
+        @content
+    }
+}
+
+
+@mixin m($name) {
+    @include modifier($name) {
+        @content
+    }
+}
+
+

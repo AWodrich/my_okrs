@@ -1,0 +1,15 @@
+/*******************************************************************************
+ *
+ * What to be controlled when javascirpt is loaded. mostly animations
+ *
+ ******************************************************************************/
+
+
+.js-loading * {
+
+    &,
+    &::before,
+    &::after {
+        animation-play-state: paused !important;
+    }
+}

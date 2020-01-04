@@ -1,0 +1,11 @@
+/*******************************************************************************
+ *
+ * Word Break mixin for best browser support
+ *
+ ******************************************************************************/
+
+@mixin word-break() {
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

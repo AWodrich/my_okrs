@@ -1,0 +1,107 @@
+/*******************************************************************************
+ *
+ * Helpful Mixin for cleaner Media Queries Usage
+ *
+ * Variables:
+ *
+ *  $breakpoint: xs, sm, xs, lg
+ *  $direction: min, max
+ *
+ * @Usage: @include Media(md, max) - for Break on md- Breakpoint max-width
+ *
+ * $grid-breakpoints: (
+ *      xs: 0,
+ *      sm: 576px,
+ *      md: 768px,
+ *      lg: 992px,
+ *      xl: 1200px
+ * ) !default;
+ *
+ ******************************************************************************/
+
+$xs: theme('screens.xs');
+$sm: theme('screens.sm');
+$md: theme('screens.md');
+$lg: theme('screens.lg');
+$xl: theme('screens.xl');
+$xxl: theme('screens.xxl');
+
+@mixin Media($breakpoint, $direction: min) {
+
+    @if $breakpoint == xs {
+
+        @if $direction == max {
+            @media only screen and (max-width: reduceBy1($sm)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: $xs) {
+                @content;
+            }
+
+        }
+    } @else if $breakpoint == sm {
+
+        @if $direction == max {
+            @media only screen and (max-width: reduceBy1($md)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: $sm) {
+                @content;
+            }
+
+        }
+    } @else if $breakpoint == md {
+
+        @if $direction == max {
+            @media only screen and (max-width: reduceBy1($lg)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: $md) {
+                @content;
+            }
+
+        }
+    } @else if $breakpoint == lg {
+
+        @if $direction == max {
+            @media only screen and (max-width: reduceBy1($xl)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: $lg) {
+                @content;
+            }
+
+        }
+    } @else if $breakpoint == xl {
+
+        @if $direction == max {
+            @media only screen and (max-width: reduceBy1($xl)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: $xl) {
+                @content;
+            }
+
+        }
+    } @else if $breakpoint == xxl {
+
+        @if $direction == max {
+            @media only screen and (max-width: reduceBy1($xxl)) {
+                @content;
+            }
+        } @else {
+            @media only screen and (min-width: $xxl) {
+                @content;
+            }
+
+        }
+    }
+}
+
+
+// End Media

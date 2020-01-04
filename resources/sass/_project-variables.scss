@@ -1,0 +1,76 @@
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Orf On", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Font Weights
+$light: 200 !default;
+$regular: 400 !default;
+$semibold: 600 !default;
+$bold: 700 !default;
+$extrabold: 800 !default;
+$bolder: $extrabold !default;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e30511;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$white: #FFFFFF;
+$black: #000;
+$grey: #b2b2b2;
+$lightgrey: #EAEAEA;
+
+// Navigation + Logo
+$nav__height: 10rem !default;
+$nav__color--border: $white !default;
+$nav__width--border: .2rem !default;
+$nav__font-size--desktop: 1.8rem !default;
+$nav__font-size--mobile: 1.2rem !default;
+$logo__font-size--desktop: 2.4rem !default;
+$logo__font-size--mobile: 1.8rem !default;
+
+
+// Headline Sizes
+$title__size--enormeous: 10rem; //desktop
+$title__size--bigger: 8rem; //desktop
+$title__size--big: 4.8rem; //desktop
+$title__size--base: 3.5rem; //desktop
+$title__size--small: 3rem; //mobile
+
+// Text Sizes
+$text__size--big: 2.5rem;
+$text__size--base: 2rem;
+$text__size--small: 1.6rem;
+$text__size--smallest: 1.4rem;
+
+// Disclaimer Text Size
+$disclaimer-text__size--base: 1rem;
+
+// Titled Tab Vars
+$titled-tab__spacings--base: 20px;
+$titled-tab__triangle--base: 10px;
+
+
+// Forms
+$checkbox__size: 2rem !default;
+/*******************************************************************************
+ *
+ * Animations
+ *
+ ******************************************************************************/
+$transition-duration-short: .15s;
+$transition-duration-base: .3s;
+$transition-duration-long: .5s;
+$easing-base: ease-in;
+$easing-out: ease-out;
+$easing-little-back: cubic-bezier(.03, .24, .31, 1.49);

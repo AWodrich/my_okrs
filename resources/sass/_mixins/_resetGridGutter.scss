@@ -1,0 +1,20 @@
+/*******************************************************************************
+ *
+ * Resets the Gutter
+ *
+ * Flag: @onlyMobile - desktop normal grid behaviour
+ ******************************************************************************/
+
+@mixin resetGridGutter($onlyMobile: false) {
+    @if $onlyMobile == false {
+        margin-left: ($grid-gutter-width / -2);
+        margin-right: ($grid-gutter-width / -2);
+    } @else {
+
+        @include Media(sm, max) {
+            margin-left: ($grid-gutter-width / -2);
+            margin-right: ($grid-gutter-width / -2);
+        }
+
+    }
+}
