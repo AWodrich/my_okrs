@@ -1,5 +1,7 @@
 import appLauncher from './utils/appLauncher';
 import Home from './components/Home';
+import Register from './components/Register';
+import Login from './components/Login';
 import '@babel/polyfill';
 
 require('./bootstrap');
@@ -16,7 +18,9 @@ require('./bootstrap');
  */
 appLauncher({
     components: {
-        Home
+        Home,
+        Register,
+        Login
     }
 });
 

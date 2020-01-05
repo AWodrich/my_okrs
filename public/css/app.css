@@ -794,6 +794,201 @@ html {
  *
  ******************************************************************************/
 
+.btn {
+    display: block;
+}
+
+
+.btn--primary {
+    background-color: #3490DC;
+    line-height: 1.5;
+    font-size: 1.8rem;
+}
+
+
+/*******************************************************************************
+ *
+ * button styles
+ *
+ ******************************************************************************/
+
+.btn {
+    display: block;
+    font-weight: 700;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: background-color 0.15s ease-in;
+    transition: background-color 0.15s ease-in;
+}
+
+
+.btn-primary {
+    background-color: rgb(225, 0, 22);
+    color: #FFFFFF;
+}
+
+
+.btn-primary:hover {
+    background-color: rgb(174, 0, 17);
+}
+
+
+.btn-primary-inverse {
+    background-color: #FFFFFF;
+    color: rgb(174, 0, 17);
+}
+
+
+.btn-primary-inverse:hover {
+    background-color: rgb(250, 250, 250);
+    color: rgb(174, 0, 17);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.btn-facebook {
+    background-color: rgb(45, 67, 110);
+    color: #FFFFFF;
+}
+
+
+.btn-facebook:hover:not(:disabled) {
+    background-color: rgb(41, 61, 100);
+}
+
+
+.btn-whatsapp {
+    background-color: rgb(38, 211, 102);
+    color: #FFFFFF;
+}
+
+
+.btn-whatsapp:hover:not(:disabled) {
+    background-color: rgb(16, 187, 79);
+}
+
+
+.apply-btn-transitions {
+    -webkit-transition: background-color 0.15s ease-in, color 0.15s ease-in;
+    transition: background-color 0.15s ease-in, color 0.15s ease-in;
+}
+
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: auto;
+}
+
+
+.home {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 30%;
+    background: url("images/header-feet.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+
+.home:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(155, 122, 122, 0.8);
+}
+
+
+.home__content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1;
+}
+
+
+@-webkit-keyframes MOVE-BG {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+
+@keyframes MOVE-BG {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    to {
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+.register {
+    position: relative;
+    background: url("images/header-feet.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+
+/*******************************************************************************
+ *
+ * Classes for Vue Transitions
+ *
+ ******************************************************************************/
+
+.fade-enter-active,
+.fade-leave-active {
+    -webkit-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+}
+
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still

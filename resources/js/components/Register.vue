@@ -1,61 +1,43 @@
 <template>
-    <div class="row">
-        Register component
-        <p v-if="errors.length">
-            Please correct the following error(s):
-        </p>
-        <ul>
-            <li v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div class="">
-            <p>
-                <label for="name">Name</label>
-                <input
-                    id="name"
-                    v-model="user.name"
-                    type="text"
-                    name="name"
-                >
-            </p>
-            <p>
-                <label for="email">E-Mail</label>
-                <input
-                    id="email"
-                    v-model="user.email"
-                    type="email"
-                    name="email"
-                >
-            </p>
-            <p>
-                <label for="password">Re-enter Password</label>
-                <input
-                    id="password"
-                    v-model="user.password"
-                    type="password"
-                    name="password"
-                >
-            </p>
-            <p>
-                <label for="password">Re-enter Password</label>
-                <input
-                    id="password2"
-                    v-model="user.password2"
-                    type="password"
-                    name="password2"
-                >
-            </p>
-            <p>
-                <button @click="checkForm">Register</button>
-            </p>
+    <div class="register p-8 flex text-center mx-auto flex-col w-1/4">
+        <h1 class="text-4xl mb-3 text-center text-white">Register</h1>
+        <transition name="fade">
+            <div
+                v-if="errors.length"
+                class="text-white text-base"
+            >
+                <p>Please correct the following error(s):</p>
+                <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                </ul>
+            </div>
+        </transition>
+
+
+        <div v-for="formInput in formInputs">
+            <BaseInput
+                class="px-1 my-1 w-full"
+                :placeholderTxt="formInput.placeholder"
+                :type="formInput.name"
+            />
         </div>
+        <button
+            class="my-1 text-white"
+            @click="checkForm"
+        >Register
+        </button>
     </div>
 </template>
 
 <script>
 import API from '../services/API';
+import BaseInput from './BaseInput';
 
 export default {
     name: 'Register',
+    components: {
+        BaseInput
+    },
     data() {
         return {
             errors: [],
@@ -64,7 +46,25 @@ export default {
                 name: null,
                 password: null,
                 password2: null
-            }
+            },
+            formInputs: [
+                {
+                    name: 'name',
+                    placeholder: 'Name eingeben'
+                },
+                {
+                    name: 'email',
+                    placeholder: 'E-Mail eingeben'
+                },
+                {
+                    name: 'password',
+                    placeholder: 'Passwort eingeben'
+                },
+                {
+                    name: 'password',
+                    placeholder: 'Passwort wiederholen'
+                }
+            ]
 
         }
     },
@@ -90,9 +90,7 @@ export default {
 
             if (!this.errors.length) {
                 console.log('no errors')
-                API.put('register',
-                    this.user,
-                )
+                API.put('register', this.user,)
                     .then((response) => {
                         console.log('response', response)
                     });

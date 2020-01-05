@@ -1,0 +1,58 @@
+/*******************************************************************************
+ *
+ * button styles
+ *
+ ******************************************************************************/
+
+
+.btn {
+    @apply block font-bold py-3 px-1 text-base no-underline text-center appearance-none;
+    transition: background-color $transition-duration-short $easing-base;
+}
+
+.btn-primary {
+    @apply bg-red text-white;
+}
+
+.btn-primary:hover {
+    @apply bg-red-dark;
+}
+
+.btn-primary-inverse {
+    @apply bg-white text-red-dark;
+}
+
+.btn-primary-inverse:hover {
+    @apply bg-grey-faint text-red-dark;
+    transform: scale(0.95);
+    transition: all .2s ease-in-out;
+
+}
+
+.btn-facebook {
+    @apply bg-facebook text-white;
+}
+
+.btn-facebook:hover:not(:disabled) {
+    @apply bg-facebook-dim;
+}
+
+
+.btn-whatsapp {
+    @apply bg-whatsapp text-white;
+}
+
+.btn-whatsapp:hover:not(:disabled) {
+    @apply bg-whatsapp-dim;
+}
+
+// Helper class for setting transitions for tailwind inline classes
+//--------------------------------------------------
+.apply-btn-transitions {
+    transition: background-color $transition-duration-short $easing-base, color $transition-duration-short $easing-base;
+}
+
+.btn:disabled {
+    opacity: .6;
+    cursor: auto;
+}

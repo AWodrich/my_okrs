@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html
     lang="de"
@@ -65,9 +64,51 @@
         rel="stylesheet"
         href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     >
+
 @show
 
 @section('scripts')
+
+
+
+    <script>
+    window.onload = function() {
+        Particles.init({
+
+            // normal options
+            selector: '.background',
+            maxParticles: 150,
+            connectParticles: true,
+            color: '#FFFFFF',
+
+            // options for breakpoints
+            responsive: [
+                {
+                    breakpoint: 768,
+                    options: {
+                        maxParticles: 200,
+                        color: '#FFFFFF',
+                        connectParticles: true
+                    }
+                },
+                {
+                    breakpoint: 425,
+                    options: {
+                        maxParticles: 100,
+                        connectParticles: true
+                    }
+                },
+                {
+                    breakpoint: 320,
+                    options: {
+                        maxParticles: 0
+
+                        // disables particles.js
+                    }
+                }
+            ]
+        });
+    };</script>
 
     <script>
     var root_url = '{{  Request::root() }}';
@@ -98,6 +139,13 @@
         ></script>
     @endif
 
+    <canvas
+        class=
+        "background"
+    ></canvas>
+    <script
+        src="{{ asset('/js/particles.js') }}"
+    ></script>
 @show
 
 </body>

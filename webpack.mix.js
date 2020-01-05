@@ -92,7 +92,7 @@ if (mix.inProduction()) {
     mix.version();
 }
 
-mix.copy('resources/images', 'public/images', false);
+mix.copy('resources/images', 'public/css/images', false);
 
 
 /*

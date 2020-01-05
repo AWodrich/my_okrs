@@ -1,0 +1,17 @@
+/*******************************************************************************
+ *
+ * Classes for Vue Transitions
+ *
+ ******************************************************************************/
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity $transition-duration-base $easing-out;
+}
+
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+

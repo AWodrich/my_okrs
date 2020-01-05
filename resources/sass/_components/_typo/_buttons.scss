@@ -1,0 +1,13 @@
+.btn {
+    display: block;
+    @include m('primary') {
+        background-color: $blue;
+        line-height: 1.5;
+        font-size: 1.8rem;
+    }
+
+    @include m('secondary') {
+
+    }
+
+}

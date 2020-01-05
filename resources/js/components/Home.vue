@@ -1,18 +1,30 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="home">
+        <div class="home__content-container">
             <div
-                v-if="!registerIsActive && !loginIsActive"
-                class="col-md-8 text-xl"
+                class="flex flex-col w-full text-xl"
+                v-for="(btn,index) in buttons"
             >
-                <button @click="registerIsActive = true" class="bg-blue text-light">
-                    Register
-                </button>
-                <button @click="loginIsActive = true" class="bg-light text-blue">Login</button>
+                <BaseButton
+                    class="w-1/4 mx-auto"
+                    :key="btn.name"
+                    v-if="!btn.isActive"
+                    @clicked="btn.isActive = true"
+                    :btnClass="btn.class"
+                    :btnText="btn.name"
+                />
+
+                <component
+                    :key="btn.name"
+                    :is="btn.name"
+                    v-if="btn.isActive"
+                ></component>
+
             </div>
-            <Register v-if="registerIsActive"></Register>
-            <Login v-if="loginIsActive"></Login>
+
         </div>
+
+
     </div>
 </template>
 
@@ -20,20 +32,30 @@
 
 import Register from './Register';
 import Login from './Login';
+import BaseButton from './BaseButton';
+
 export default {
     name: 'Home',
     components: {
-      Register,
-      Login
+        Register,
+        Login,
+        BaseButton
     },
     data() {
         return {
-            registerIsActive: false,
-            loginIsActive: false,
+            buttons: [
+                {
+                    name: 'Register',
+                    isActive: false,
+                    class: 'btn btn-primary-inverse'
+                },
+                {
+                    name: 'Login',
+                    isActive: false,
+                    class: 'btn btn-link'
+                }
+            ]
         }
     },
-    mounted() {
-        console.log('Component mounted.')
-    }
 }
 </script>
